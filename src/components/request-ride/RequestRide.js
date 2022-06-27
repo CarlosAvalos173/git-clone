@@ -19,7 +19,8 @@ const RequestRide = ({ toggleModal }) => {
         rideUuid: rideUuid,
         requestor: user,
         pickup: selectedFrom,
-        destination: selectedTo,
+        // destination: selectedTo,
+        destination: selectedFrom,
         status: "waiting",
       };
       try {
@@ -40,7 +41,7 @@ const RequestRide = ({ toggleModal }) => {
     <div className="request-ride">
       <div className="request-ride__content">
         <div className="request-ride__container">
-          <div className="request-ride__title">Requesting a Ride</div>
+          <div className="request-ride__title">Requesting a Nurse</div>
           <div className="request-ride__close">
             <img
               alt="close"
@@ -52,8 +53,8 @@ const RequestRide = ({ toggleModal }) => {
         <div className="request-ride__subtitle"></div>
         <div className="request-ride__form">
           <p>
-            You entered the pickup location successfully. Do you want to request
-            a ride now ?
+            You entered the where you are location successfully. Do you want to request
+            a nurse now ?
           </p>
           <button
             className="request-ride__btn request-ride__change-btn"
@@ -62,7 +63,7 @@ const RequestRide = ({ toggleModal }) => {
             Change
           </button>
           <button className="request-ride__btn" onClick={requestRide}>
-            Requesting a ride now
+            Requesting a nurse now
           </button>
         </div>
       </div>

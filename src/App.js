@@ -107,7 +107,7 @@ function App() {
     if (rideRequest) {
       lookingDriverTimeout.current = setTimeout(() => {
         alert(
-          "Cannot find your driver, please re-enter your pickup location and try again"
+          "Cannot find your nurse, please re-enter your where you are location and try again"
         );
         setRideRequest(null);
         uiService.hideLoading();

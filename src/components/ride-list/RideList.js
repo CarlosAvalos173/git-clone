@@ -83,18 +83,26 @@ const RideList = () => {
             </svg>
           </div>
           <div>
-            <p className="ride-list__result-label">
+            {/* <p className="ride-list__result-label">
               <span>From: </span>
               {request.pickup && request.pickup.label
                 ? request.pickup.label
                 : ""}
-            </p>
+            </p> */
             <p className="ride-list__result-label">
+              <span>To: </span>
+              {request.pickup && request.pickup.label
+                ? request.pickup.label
+                : ""}
+            </p>
+            }
+            
+            {/* <p className="ride-list__result-label">
               <span>To: </span>
               {request.destination && request.destination.label
                 ? request.destination.label
                 : ""}
-            </p>
+            </p> */}
             <button
               className="ride-list__accept-btn"
               onClick={() => acceptRide(request)}

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import withModal from "../common/Modal";
 import SignUp from "../register/SignUp";
-
+import logo from "../../images/logo_transparent.png";
 import Context from "../../context";
 
 import * as cometChatService from "../../services/cometchat";
@@ -70,13 +70,7 @@ const Login = ({ toggleModal }) => {
   return (
     <div className="login__container">
       <div className="login__welcome">
-        <p>
-          Build{" "}
-          <span style={{ color: "#000000", fontWeight: "bold" }}>
-            Uber Clone
-          </span>{" "}
-          with React
-        </p>
+        <img id="logo" src={logo} alt="MedHelp"/>
       </div>
       <div className="login__form-container">
         <div className="login__form">

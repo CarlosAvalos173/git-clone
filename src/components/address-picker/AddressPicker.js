@@ -42,8 +42,8 @@ const AddressPicker = ({ toggleModal }) => {
   const initProvider = () => {
     provider.current = new OpenStreetMapProvider({
       params: {
-        "accept-language": "en",
-        countrycodes: "us",
+        "accept-language": "es",
+        countrycodes: "mx",
       },
     });
   };
@@ -52,11 +52,13 @@ const AddressPicker = ({ toggleModal }) => {
     if (selectedLocation?.label && selectedLocation?.x && selectedLocation?.y) {
       if (isFrom) {
         setSelectedFrom(() => selectedLocation);
-        setIsFrom(() => false);
-      } else {
         setSelectedTo(() => selectedLocation);
-        setIsFrom(() => true);
-      }
+        // setIsFrom(() => false);
+      } 
+      // else {
+      //   setSelectedTo(() => selectedLocation);
+      //   setIsFrom(() => true);
+      // }
       setSearchResults(() => []);
       searchRef.current.value = "";
     }
@@ -69,21 +71,24 @@ const AddressPicker = ({ toggleModal }) => {
           <p className="address__title-from" onClick={() => setIsFrom(true)}>
             {selectedFrom && selectedFrom.label
               ? selectedFrom.label
-              : "Pickup location ?"}
+              : "Where are you ?"}
           </p>
-          <p className="address__title-to" onClick={() => setIsFrom(false)}>
+          {/* <p className="address__title-to" onClick={() => setIsFrom(false)}>
             {selectedTo && selectedTo.label
               ? selectedTo.label
               : "Destination ?"}
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="search">
         <input
           className="search__input"
           type="text"
+          // placeholder={
+          //   isFrom ? "Add a pickup location" : "Enter your destination"
+          // }
           placeholder={
-            isFrom ? "Add a pickup location" : "Enter your destination"
+           "Add where you are"
           }
           onChange={onInputChanged}
           ref={searchRef}

@@ -53,7 +53,7 @@ const Home = () => {
 
   const initMap = () => {
     map.current = L.map("map", {
-      center: [38.8951, -77.0364],
+      center: [23.7417, -99.1459],
       zoom: 13,
       layers: [
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

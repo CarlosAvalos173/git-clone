@@ -16,7 +16,7 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
   const history = useHistory();
 
   const cancelRide = () => {
-    const isCancel = window.confirm("Do you want to cancel this ride?");
+    const isCancel = window.confirm("Do you want to cancel this nurse?");
     if (isCancel) {
       currentRide.status = "canceled";
       updateRide(currentRide);
@@ -24,7 +24,7 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
   };
 
   const finishRide = () => {
-    const isFinish = window.confirm("Do you want to finish this ride?");
+    const isFinish = window.confirm("Do you want to finish this cite?");
     if (isFinish) {
       currentRide.status = "done";
       updateRide(currentRide);
@@ -83,12 +83,12 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
           <span>Phone: </span>
           {user.phone}
         </p>
-        <p className="ride-detail__result-label">
+        {/* <p className="ride-detail__result-label">
           <span>From: </span>
           {currentRide.pickup && currentRide.pickup.label
             ? currentRide.pickup.label
             : ""}
-        </p>
+        </p> */}
         <p className="ride-detail__result-label">
           <span>To: </span>
           {currentRide.destination && currentRide.destination.label
