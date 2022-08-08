@@ -31,7 +31,7 @@ const ProductDisplay = () => (
       <h5>$300.00 MXN</h5>
       </div>
     </div>
-    <form action="http://localhost:4242/create-checkout-session" method="POST" onClick={change_status}>
+    <form action="https://medhelp-omega.vercel.app:4242/create-checkout-session" method="POST" onClick={change_status}>
       <button type="submit">
         Checkout
       </button>
