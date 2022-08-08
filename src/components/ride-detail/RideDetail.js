@@ -10,6 +10,35 @@ import email from "../../images/email.png";
 import exit from "../../images/exit.png";
 import tick from "../../images/tick.png";
 
+
+// default state is notPaid
+let status = "notPaid";
+
+const isPaid = () => {
+  console.log(status);
+  return status === "paid";
+}
+
+const change_status = () => {
+  status = "paid";
+}
+
+const ProductDisplay = () => (
+  <section>
+    <div className="product">
+      <div className="description">
+      <h3>Servicio Medico a Domicilio MedHelp</h3>
+      <h5>$300.00 MXN</h5>
+      </div>
+    </div>
+    <form action="http://localhost:4242/create-checkout-session" method="POST" onClick={change_status}>
+      <button type="submit">
+        Checkout
+      </button>
+    </form>
+  </section>
+);
+
 const RideDetail = ({ user, isDriver, currentRide }) => {
   const { setCurrentRide } = useContext(Context);
 
@@ -61,8 +90,8 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
       <div className="ride-detail__user-avatar">
         <img src={user.image} alt={user.email} />
       </div>
-      <div className="ride-detail__actions" onClick={talkToUser}>
-        <div className="ride-detail__action">
+      <div className="ride-detail__actions" >
+        <div className="ride-detail__action" onClick={talkToUser}>
           <img src={email} alt="email" />
         </div>
         <div className="ride-detail__action" onClick={cancelRide}>
@@ -95,6 +124,9 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
             ? currentRide.destination.label
             : ""}
         </p>
+        {!isDriver && isPaid && (
+          <ProductDisplay />
+        )}
       </div>
     </div>
   );
