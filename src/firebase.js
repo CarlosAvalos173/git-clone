@@ -16,7 +16,11 @@ const firebaseConfig = {
 const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
-const analytics = app.getAnalytics();
+firebase.analytics.isSupported().then((isSupported) => {
+    if (isSupported) {
+      const analytics = firebase.analytics();
+    }
+})
 const realTimeDb = app.database();
 const db = app.firestore();
 const auth = app.auth();
