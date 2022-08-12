@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import "firebase/storage";
+import "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
@@ -9,11 +10,13 @@ const firebaseConfig = {
   storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
   messagingSenderId: `${process.env.REACT_APP_FIREABSE_MESSAGING_SENDER_ID}`,
   appId: `${process.env.REACT_APP_FIREBASE_APP_ID}`,
+  measurementId: "G-3GKV29E964"
 };
 
 const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
+const analytics = getAnalytics(app);
 const realTimeDb = app.database();
 const db = app.firestore();
 const auth = app.auth();
