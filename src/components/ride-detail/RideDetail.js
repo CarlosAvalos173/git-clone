@@ -31,7 +31,7 @@ const ProductDisplay = () => (
       <h5>$300.00 MXN</h5>
       </div>
     </div>
-    <form action="https://buy.stripe.com/test_6oEbJ1e7G7rY4bCeUU">
+    <form target="_blank" action="https://buy.stripe.com/test_6oEbJ1e7G7rY4bCeUU">
       <button type="submit">
         Checkout
       </button>
