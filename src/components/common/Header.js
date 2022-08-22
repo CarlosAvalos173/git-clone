@@ -32,8 +32,8 @@ const Header = () => {
         {user && (
           <div className="header__right">
             <img src={user.image} alt={user.email} />
-            <span> Hello, {user.fullname} </span>
-            <button onClick={() => { history('/profile');}}></button>
+            <span> Helloo, {user.fullname} </span>
+            <button onClick={() => { history('/profile');}}>Profile</button>
           </div>
         )}
       </div>
