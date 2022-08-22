@@ -44,8 +44,9 @@ const Profile = () => {
   return (
     <>
         <Header />  
-        <div className="profile__container" style={style} />
-        {renderUserInfo()}
+        {user}
+        {/* <div className="profile__container" style={style} />
+        {renderUserInfo()} */}
     </>
 
   );
