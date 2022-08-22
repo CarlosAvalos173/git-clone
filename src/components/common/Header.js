@@ -30,7 +30,7 @@ const Header = () => {
         {user && (
           <div className="header__right">
             <img src={user.image} alt={user.email} />
-            <span onClick={Profile} >Hello, {user.fullname}</span>
+            <span><a href="/profile"> Hello, {user.fullname} </a></span>
           </div>
         )}
       </div>

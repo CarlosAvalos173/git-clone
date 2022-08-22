@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  useNavigate,
 } from "react-router-dom";
 
 import Chat from "./components/chat/Chat";
@@ -33,8 +34,10 @@ function App() {
   const fbCreatedRideRef = useRef();
   const fbCurrentRideRef = useRef();
   const lookingDriverTimeout = useRef();
-
+  
   const lookingDriverMaxTime = 30000;
+
+  const navigate = useNavigate();
 
   const context = {
     user,
@@ -53,6 +56,10 @@ function App() {
     payment,
     setPayment,
   };
+
+  const navigateToProfile = () => {
+    history.push("/profile");
+  }
 
   const initAuthUser = () => {
     const authenticatedUser = localStorage.getItem("auth");
@@ -169,9 +176,7 @@ function App() {
           <Route exact path="*">
             <Redirect to="/" />
           </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+          <Route path="/profile" element={<Profile />} />
         </Switch>
       </Router>
       <Loading />
