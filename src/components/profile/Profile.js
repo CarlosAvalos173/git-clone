@@ -29,9 +29,8 @@ const Profile = () => {
   return (
     <>
     <div>
-    <Header />  
+    <Header/>  
     <Userinfo/>
-    <RequestRide/>
     </div>
     </>
 
