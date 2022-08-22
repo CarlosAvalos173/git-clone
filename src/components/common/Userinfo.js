@@ -36,10 +36,6 @@ const Userinfo = () => {
         <span>Account: </span>
         {user.role}
       </p>
-      <p className="ride-detail__result-label">
-        <span>rides: </span>
-        {user.rides.length}
-      </p>
 
     </div>
   </div>
