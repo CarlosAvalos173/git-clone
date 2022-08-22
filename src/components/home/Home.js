@@ -34,17 +34,6 @@ const Home = () => {
     }
   }, []);
 
-  //Getting the location of the picker
-  const getLocation = useCallback((e) => {
-    const latlng = e.latlng;
-    const location = {
-      x: latlng.lng,
-      y: latlng.lat,
-      label: "",
-    };
-    setSelectedFrom(() => location);
-  } , []);
-
   useEffect(() => {
     if (shouldDrawRoute(selectedFrom, selectedTo)) {
       drawRoute(selectedFrom, selectedTo);
@@ -65,8 +54,6 @@ const Home = () => {
   const initMap = () => {
     map.current = L.map("map", {
       center: [23.7417, -99.1459],
-      //enable picker
-      picker: true,
       zoom: 13,
       layers: [
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
