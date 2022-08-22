@@ -11,6 +11,7 @@ import Home from "./components/home/Home";
 import Loading from "./components/common/Loading";
 import Login from "./components/login/Login";
 import PrivateRoute from "./components/common/PrivateRoute";
+import Profile from "./components/profile/Profile";
 
 import * as firebaseService from "./services/firebase";
 import * as uiService from "./services/ui";
@@ -167,6 +168,9 @@ function App() {
           </Route>
           <Route exact path="*">
             <Redirect to="/" />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
         </Switch>
       </Router>
