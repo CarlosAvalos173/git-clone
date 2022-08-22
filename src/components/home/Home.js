@@ -26,15 +26,6 @@ const Home = () => {
     initRouteControl();
   }, []);
 
-  //Setting the picker location to the field of the selected location
-  useEffect(() => {
-    if (selectedFrom) {
-      map.current.setView([selectedFrom.y, selectedFrom.x], 13);
-    }
-  }, [selectedFrom]);
-
-
-
   const drawRoute = useCallback((from, to) => {
     if (shouldDrawRoute(from, to) && routeControl && routeControl.current) {
       const fromLatLng = new L.LatLng(from.y, from.x);
@@ -42,6 +33,17 @@ const Home = () => {
       routeControl.current.setWaypoints([fromLatLng, toLatLng]);
     }
   }, []);
+
+  //Getting the location of the picker
+  const getLocation = useCallback((e) => {
+    const latlng = e.latlng;
+    const location = {
+      x: latlng.lng,
+      y: latlng.lat,
+      label: "",
+    };
+    selectedFrom ? setSelectedTo(() => location) : setSelectedFrom(() => location);
+  } , []);
 
   useEffect(() => {
     if (shouldDrawRoute(selectedFrom, selectedTo)) {
@@ -63,6 +65,8 @@ const Home = () => {
   const initMap = () => {
     map.current = L.map("map", {
       center: [23.7417, -99.1459],
+      //enable picker
+      picker: true,
       zoom: 13,
       layers: [
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
