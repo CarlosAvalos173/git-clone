@@ -26,6 +26,15 @@ const Home = () => {
     initRouteControl();
   }, []);
 
+  //Setting the picker location to the field of the selected location
+  useEffect(() => {
+    if (selectedFrom) {
+      map.current.setView([selectedFrom.y, selectedFrom.x], 13);
+    }
+  }, [selectedFrom]);
+
+
+
   const drawRoute = useCallback((from, to) => {
     if (shouldDrawRoute(from, to) && routeControl && routeControl.current) {
       const fromLatLng = new L.LatLng(from.y, from.x);
