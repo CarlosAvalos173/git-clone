@@ -25,25 +25,25 @@ const Profile = () => {
     };
 
     const renderUserInfo = () => {
+        console.log(Context)
         return (
-
-
-            <div className="profile__info">
-                <div className="profile__info__image">
-                    <img src={user.image} alt={user.email} />
-                </div>
-                <div className="profile__info__details">
-                    <div className="profile__info__details__name">
-                        <span>{user.fullname}</span>
-                    </div>
-                    <div className="profile__info__details__email">
-                        <span>{user.email}</span>
-                    </div>
-                    <div className="profile__info__details__rides">
-                        <span>{getNumberOfRides()}</span>
-                    </div>
-                </div>
-            </div>
+            <p>asd</p>
+            // <div className="profile__info">
+            //     <div className="profile__info__image">
+            //         <img src={user.image} alt={user.email} />
+            //     </div>
+            //     <div className="profile__info__details">
+            //         <div className="profile__info__details__name">
+            //             <span>{user.fullname}</span>
+            //         </div>
+            //         <div className="profile__info__details__email">
+            //             <span>{user.email}</span>
+            //         </div>
+            //         <div className="profile__info__details__rides">
+            //             <span>{getNumberOfRides()}</span>
+            //         </div>
+            //     </div>
+            // </div>
         );
     };
 
