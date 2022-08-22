@@ -3,6 +3,7 @@ import Header from "../common/Header";
 import Userinfo from "../common/Userinfo";
 
 import Context from "../../context";
+import RequestRide from "../request-ride/RequestRide";
 
 const Profile = () => {
     
@@ -30,6 +31,7 @@ const Profile = () => {
     <div>
     <Header />  
     <Userinfo/>
+    <RequestRide/>
     </div>
     </>
 
