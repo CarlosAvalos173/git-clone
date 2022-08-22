@@ -16,11 +16,20 @@ const Profile = () => {
         height:"100vh",
     };
 
-    const renderUserInfo = () => {
-        console.log(user)
-        return (
+    // const renderUserInfo = () => {
+    //     console.log(user)
+    //     return (
 
-            <div className="profile__info">
+
+    //     );
+    // };
+
+  return (
+    <>
+    <div>
+    <Header />  
+    <div className="profile__container" style={style} />
+    <div className="profile__info">
                 <div className="profile__info__image">
                     <img src={user.image} alt={user.email} />
                 </div>
@@ -36,15 +45,6 @@ const Profile = () => {
                     </div> */}
                 </div>
             </div>
-        );
-    };
-
-  return (
-    <>
-    <div>
-    {/* <Header />   */}
-    <div className="profile__container" style={style} />
-    {renderUserInfo()}
     </div>
         
 
