@@ -168,10 +168,10 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
+          <Route exact path="/" component={Profile} />
           <Route exact path="*">
             <Redirect to="/" />
           </Route>
-          <Route path="/" component={Profile} />
         </Switch>profile
       </Router>
       <Loading />
