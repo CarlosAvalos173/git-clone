@@ -15,7 +15,6 @@ const Home = () => {
   const routeControl = useRef();
 
   const { selectedFrom, selectedTo, user, currentRide } = useContext(Context);
-  selectedTo = selectedFrom
   const style = {
     width: "100%",
     height: "100vh",
