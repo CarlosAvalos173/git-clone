@@ -19,36 +19,37 @@ const Profile = () => {
     const style = {
         width:"100%",
         height:"100vh",
-    }
-    const renderUserInfo = () => {
-        return (
+    };
+
+    // const renderUserInfo = () => {
+    //     return (
 
 
-            <div className="profile__info">
-                <div className="profile__info__image">
-                    <img src={user.image} alt={user.email} />
-                </div>
-                <div className="profile__info__details">
-                    <div className="profile__info__details__name">
-                        <span>{user.fullname}</span>
-                    </div>
-                    <div className="profile__info__details__email">
-                        <span>{user.email}</span>
-                    </div>
-                    <div className="profile__info__details__rides">
-                        <span>{getNumberOfRides()}</span>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    //         <div className="profile__info">
+    //             <div className="profile__info__image">
+    //                 <img src={user.image} alt={user.email} />
+    //             </div>
+    //             <div className="profile__info__details">
+    //                 <div className="profile__info__details__name">
+    //                     <span>{user.fullname}</span>
+    //                 </div>
+    //                 <div className="profile__info__details__email">
+    //                     <span>{user.email}</span>
+    //                 </div>
+    //                 <div className="profile__info__details__rides">
+    //                     <span>{getNumberOfRides()}</span>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
+    // };
 
   return (
     <>
     <div>
     <Header />  
     <div className="profile__container" style={style} />
-        {renderUserInfo()}
+        <p>hhola</p>
     </div>
         
 
