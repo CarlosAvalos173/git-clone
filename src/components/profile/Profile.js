@@ -3,20 +3,35 @@ import { useHistory } from "react-router-dom";
 import Header from "../common/Header";
 import * as firebaseService from "../../services/firebase";
 import * as uiService from "../../services/ui";
+import { useEffect, useState, useContext, useRef } from "react";
 
+import * as firebaseService from "../../services/firebase";
+import * as uiService from "../../services/ui";
+
+import Context from "../../context";
 import Context from "../../context";
 import { withRouter } from 'react-router-dom';
 
-const Profile = ({ user }) => {
+const Profile = () => {
     
-    //Function to extract the number of user rides from the user object
-    // const getNumberOfRides = () => {
-    //     let numberOfRides = 0;
-    //     if (user.rides) {
-    //     numberOfRides = user.rides.length;
-    //     }
-    //     return numberOfRides;
-    // };
+    const [rideRequests, setRideRequests] = useState();
+
+    const { user, setCurrentRide, setSelectedFrom, setSelectedTo } =
+      useContext(Context);
+  
+    const fbUserRef = useRef(firebaseService.getRef("users"));
+
+    useEffect(() => {
+        firebaseService.getDataRealtimeQuery({
+          ref: fbUserRef,
+          query: "status",
+          criteria: "waiting",
+          callback: onRidesLoaded,
+        });
+        return () => {
+          firebaseService.offRealtimeDatabase(fbUserRef.current);
+        };
+      }, []);
 
     const style = {
         width:"100%",
@@ -28,13 +43,14 @@ const Profile = ({ user }) => {
         return (
             <div>
             <span>MedHelp</span>
-            {user && (
+            <span> {user.fullname} </span>
+            {/* {user && (
                 <div>
                   <img src={user.image} alt={user.email} />
                   <span> Helloo, {user.fullname} </span>
                 </div>
 
-              )}
+              )} */}
               </div>
             // <div className="profile__info">
             //     <div className="profile__info__image">
