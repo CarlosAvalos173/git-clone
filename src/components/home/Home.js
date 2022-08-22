@@ -29,8 +29,9 @@ const Home = () => {
   const drawRoute = useCallback((from, to) => {
     if (shouldDrawRoute(from, to) && routeControl && routeControl.current) {
       const fromLatLng = new L.LatLng(from.y, from.x);
-      const toLatLng = new L.LatLng(to.y, to.x);
-      routeControl.current.setWaypoints([fromLatLng, toLatLng]);
+      routeControl.current.setWaypoints([fromLatLng, fromLatLng]);
+      //const toLatLng = new L.LatLng(to.y, to.x);
+      //routeControl.current.setWaypoints([fromLatLng, toLatLng]);
     }
   }, []);
 
