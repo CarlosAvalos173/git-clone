@@ -6,7 +6,6 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import {useNavigate} from 'react-router-dom';
 
 import Chat from "./components/chat/Chat";
 import Home from "./components/home/Home";
@@ -38,7 +37,6 @@ function App() {
   
   const lookingDriverMaxTime = 30000;
 
-  const navigate = useNavigate();
 
   const context = {
     user,
