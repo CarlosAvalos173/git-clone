@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import Context from "../../context";
-
+import { withRouter } from 'react-router-dom';
 const Header = () => {
   const { user, setUser, cometChat } = useContext(Context);
 
@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   const viewProfile = () => {
-    history.to("/profile");
+    history.push("/profile");
   };
 
   return (
