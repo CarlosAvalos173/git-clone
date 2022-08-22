@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   const viewProfile = () => {
-    history.push("/profile");
+    history.to("/profile");
   };
 
   return (
