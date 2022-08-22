@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 import Context from "../../context";
 import { withRouter } from 'react-router-dom';
 const Header = () => {
   const { user, setUser, cometChat } = useContext(Context);
-  const navigate = useNavigate();
   const history = useHistory();
 
   const logout = async () => {
@@ -34,7 +33,7 @@ const Header = () => {
           <div className="header__right">
             <img src={user.image} alt={user.email} />
             <span> Hello, {user.fullname} </span>
-            <button onClick={() => { navigate('/profile');}}></button>
+            <button onClick={() => { history('/profile');}}></button>
           </div>
         )}
       </div>
