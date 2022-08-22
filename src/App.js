@@ -176,7 +176,7 @@ function App() {
           <Route exact path="*">
             <Redirect to="/" />
           </Route>
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </Router>
       <Loading />
