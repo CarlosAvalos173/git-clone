@@ -15,7 +15,7 @@ const Home = () => {
   const routeControl = useRef();
 
   const { selectedFrom, selectedTo, user, currentRide } = useContext(Context);
-
+  selectedTo = selectedFrom
   const style = {
     width: "100%",
     height: "100vh",
@@ -36,12 +36,13 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (shouldDrawRoute(selectedFrom, selectedTo)) {
-      drawRoute(selectedFrom, selectedTo);
+    if (shouldDrawRoute(selectedFrom, selectedFrom)) {
+      drawRoute(selectedFrom, selectedFrom);
     }
-  }, [selectedFrom, selectedTo, drawRoute]);
+  }, [selectedFrom, selectedFrom, drawRoute]);
 
   const shouldDrawRoute = (selectedFrom, selectedTo) => {
+    selectedTo = selectedFrom;
     return (
       selectedFrom?.label &&
       selectedTo?.label &&
