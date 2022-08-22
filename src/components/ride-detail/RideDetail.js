@@ -112,6 +112,10 @@ const RideDetail = ({ user, isDriver, currentRide }) => {
           <span>Phone: </span>
           {user.phone}
         </p>
+        <p className="ride-detail__result-label">
+          <span>Cost: </span>
+          $300.00 MXN
+        </p>
         {/* <p className="ride-detail__result-label">
           <span>From: </span>
           {currentRide.pickup && currentRide.pickup.label

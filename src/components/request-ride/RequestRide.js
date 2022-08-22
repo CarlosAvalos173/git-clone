@@ -7,7 +7,7 @@ import * as uiService from "../../services/ui";
 import Context from "../../context";
 
 const RequestRide = ({ toggleModal }) => {
-  const { user, selectedFrom, selectedTo, setRideRequest } =
+  const { user, selectedFrom, selectedTo, setRideRequest, payment } =
     useContext(Context);
 
   const requestRide = async () => {
@@ -21,6 +21,7 @@ const RequestRide = ({ toggleModal }) => {
         pickup: selectedFrom,
         // destination: selectedTo,
         destination: selectedFrom,
+        payment: 300,
         status: "waiting",
       };
       try {

@@ -107,7 +107,7 @@ const RideList = () => {
               className="ride-list__accept-btn"
               onClick={() => acceptRide(request)}
             >
-              Accept
+              Accept + $ {request.price}
             </button>
           </div>
         </div>

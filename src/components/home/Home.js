@@ -15,6 +15,7 @@ const Home = () => {
   const routeControl = useRef();
 
   const { selectedFrom, selectedTo, user, currentRide } = useContext(Context);
+
   const style = {
     width: "100%",
     height: "100vh",
@@ -28,20 +29,18 @@ const Home = () => {
   const drawRoute = useCallback((from, to) => {
     if (shouldDrawRoute(from, to) && routeControl && routeControl.current) {
       const fromLatLng = new L.LatLng(from.y, from.x);
-      routeControl.current.setWaypoints([fromLatLng, fromLatLng]);
-      //const toLatLng = new L.LatLng(to.y, to.x);
-      //routeControl.current.setWaypoints([fromLatLng, toLatLng]);
+      const toLatLng = new L.LatLng(to.y, to.x);
+      routeControl.current.setWaypoints([fromLatLng, toLatLng]);
     }
   }, []);
 
   useEffect(() => {
-    if (shouldDrawRoute(selectedFrom, selectedFrom)) {
-      drawRoute(selectedFrom, selectedFrom);
+    if (shouldDrawRoute(selectedFrom, selectedTo)) {
+      drawRoute(selectedFrom, selectedTo);
     }
-  }, [selectedFrom, selectedFrom, drawRoute]);
+  }, [selectedFrom, selectedTo, drawRoute]);
 
   const shouldDrawRoute = (selectedFrom, selectedTo) => {
-    selectedTo = selectedFrom;
     return (
       selectedFrom?.label &&
       selectedTo?.label &&
