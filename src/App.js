@@ -171,8 +171,8 @@ function App() {
           <Route exact path="*">
             <Redirect to="/" />
           </Route>
-          <Route path="/profile" component={Profile} />
-        </Switch>
+          <Route path="/" component={Profile} />
+        </Switch>profile
       </Router>
       <Loading />
     </Context.Provider>
