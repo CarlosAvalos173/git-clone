@@ -16,7 +16,7 @@ const Profile = () => {
         return numberOfRides;
     };
 
-    const syle = {
+    const style = {
         width:"100%",
         height:"100vh",
     }
