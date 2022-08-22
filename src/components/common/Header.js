@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import Profile from "./Profile";
 
 import Context from "../../context";
 
@@ -23,6 +22,10 @@ const Header = () => {
     localStorage.removeItem("auth");
   };
 
+  const viewProfile = () => {
+    history.push("/profile");
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -30,7 +33,7 @@ const Header = () => {
         {user && (
           <div className="header__right">
             <img src={user.image} alt={user.email} />
-            <span><a href="/profile"> Hello, {user.fullname} </a></span>
+            <span onClick={viewProfile}> Hello, {user.fullname} </span>
           </div>
         )}
       </div>
