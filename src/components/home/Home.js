@@ -42,7 +42,7 @@ const Home = () => {
       y: latlng.lat,
       label: "",
     };
-    selectedFrom ? setSelectedTo(() => location) : setSelectedFrom(() => location);
+    setSelectedFrom(() => location);
   } , []);
 
   useEffect(() => {
