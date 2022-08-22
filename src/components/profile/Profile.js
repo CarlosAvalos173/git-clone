@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Header from "../common/Header";
-
+import Userinfo from "../common/Userinfo";
 
 import Context from "../../context";
 
@@ -29,24 +29,8 @@ const Profile = () => {
     <>
     <div>
     <Header />  
-    <div className="profile__container" style={style} />
-    <div className="profile__info">
-                <div className="profile__info__details">
-                    <div className="profile__info__details__name">
-                        <span>{user.fullname}</span>
-                    </div>
-                    <div className="profile__info__details__email">
-                        <span>{user.email}</span>
-                    </div>
-                    {/* <div className="profile__info__details__rides">
-                        <span>{getNumberOfRides()}</span>
-                    </div> */
-                    }
-                </div>
-            </div>
+    <Userinfo/>
     </div>
-        
-
     </>
 
   );
