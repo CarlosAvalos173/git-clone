@@ -26,6 +26,8 @@ function App() {
   const [selectedTo, setSelectedTo] = useState(null);
   const [rideRequest, setRideRequest] = useState(null);
   const [currentRide, setCurrentRide] = useState(null);
+  //Prueba
+  const [payment, setPayment] = useState(null);
 
   const fbCreatedRideRef = useRef();
   const fbCurrentRideRef = useRef();
@@ -46,6 +48,9 @@ function App() {
     setRideRequest,
     currentRide,
     setCurrentRide,
+    //prueba
+    payment,
+    setPayment,
   };
 
   const initAuthUser = () => {
@@ -78,6 +83,7 @@ function App() {
       setCurrentRide(parsedCurrentRide);
       setSelectedFrom(parsedCurrentRide.pickup);
       setSelectedTo(parsedCurrentRide.destination);
+      setPayment(parsedCurrentRide.payment);
     }
   };
 
