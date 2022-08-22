@@ -9,15 +9,14 @@ import { withRouter } from 'react-router-dom';
 
 const Profile = ({ user }) => {
     
-    const { user, setUser, cometChat } = useContext(Context);
     //Function to extract the number of user rides from the user object
-    const getNumberOfRides = () => {
-        let numberOfRides = 0;
-        if (user.rides) {
-        numberOfRides = user.rides.length;
-        }
-        return numberOfRides;
-    };
+    // const getNumberOfRides = () => {
+    //     let numberOfRides = 0;
+    //     if (user.rides) {
+    //     numberOfRides = user.rides.length;
+    //     }
+    //     return numberOfRides;
+    // };
 
     const style = {
         width:"100%",
