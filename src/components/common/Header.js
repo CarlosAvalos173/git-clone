@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import Profile from "./Profile";
 
 import Context from "../../context";
 
@@ -29,7 +30,7 @@ const Header = () => {
         {user && (
           <div className="header__right">
             <img src={user.image} alt={user.email} />
-            <span>Hello, {user.fullname}</span>
+            <span onClick={Profile} >Hello, {user.fullname}</span>
           </div>
         )}
       </div>
