@@ -23,7 +23,6 @@ const Profile = () => {
           ref: fbUserRef,
           query: "status",
           criteria: "waiting",
-          callback: onRidesLoaded,
         });
         return () => {
           firebaseService.offRealtimeDatabase(fbUserRef.current);
