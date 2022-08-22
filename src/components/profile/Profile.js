@@ -31,9 +31,9 @@ const Profile = () => {
                     <div className="profile__info__details__email">
                         <span>{user.email}</span>
                     </div>
-                    <div className="profile__info__details__rides">
+                    {/* <div className="profile__info__details__rides">
                         <span>{getNumberOfRides()}</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );
