@@ -165,10 +165,11 @@ function App() {
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
           <PrivateRoute exact path="/chat" component={Chat} />
+          <PrivateRoute exact path="/profile" component={Profile}/>
           <Route exact path="/login">
             <Login />
           </Route>
-          <PrivateRoute exact path="/profile" component={Profile}/>
+          
           <Route exact path="*">
             <Redirect to="/" />
           </Route>

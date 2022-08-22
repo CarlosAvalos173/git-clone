@@ -16,6 +16,7 @@ const Profile = () => {
         height:"100vh",
     };
 
+    console.log(user);
     // const renderUserInfo = () => {
     //     console.log(user)
     //     return (
@@ -23,16 +24,13 @@ const Profile = () => {
 
     //     );
     // };
-
+    
   return (
     <>
     <div>
     <Header />  
     <div className="profile__container" style={style} />
     <div className="profile__info">
-                <div className="profile__info__image">
-                    <img src={user.image} alt={user.email} />
-                </div>
                 <div className="profile__info__details">
                     <div className="profile__info__details__name">
                         <span>{user.fullname}</span>
@@ -42,7 +40,8 @@ const Profile = () => {
                     </div>
                     {/* <div className="profile__info__details__rides">
                         <span>{getNumberOfRides()}</span>
-                    </div> */}
+                    </div> */
+                    }
                 </div>
             </div>
     </div>
