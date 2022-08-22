@@ -29,7 +29,7 @@ const Header = () => {
         {user && (
           <div className="header__right">
             <img src={user.image} alt={user.email} />
-            <span onClick={toggleModal(false)}>Hello, {user.fullname}</span>
+            <span>Hello, {user.fullname}</span>
           </div>
         )}
       </div>
