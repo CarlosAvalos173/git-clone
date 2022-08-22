@@ -3,12 +3,11 @@ import { useHistory } from "react-router-dom";
 import Header from "../common/Header";
 import * as firebaseService from "../../services/firebase";
 import * as uiService from "../../services/ui";
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import * as firebaseService from "../../services/firebase";
 import * as uiService from "../../services/ui";
 
-import Context from "../../context";
 import Context from "../../context";
 import { withRouter } from 'react-router-dom';
 
