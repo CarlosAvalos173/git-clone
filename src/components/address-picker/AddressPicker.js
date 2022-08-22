@@ -41,8 +41,6 @@ const AddressPicker = ({ toggleModal }) => {
 
   const initProvider = () => {
     provider.current = new OpenStreetMapProvider({
-      showMarker: true,
-      maxMarkers: 1,
       params: {
         "accept-language": "es",
         countrycodes: "mx",
@@ -50,12 +48,12 @@ const AddressPicker = ({ toggleModal }) => {
     });
   };
 
-  // const searchControl  = new GeoSearch.GeoSearchControl({
-  //   style: 'bar',
-  //   provider: new GeoSearch.OpenStreetMapProvider (),
-  //   showMarker: true,
-  //   marker: marker, // use custom marker, not working?
-  // });
+  const searchControl  = new GeoSearch.GeoSearchControl({
+    style: 'bar',
+    provider: new GeoSearch.OpenStreetMapProvider (),
+    showMarker: true,
+    marker: marker, // use custom marker, not working?
+  });
 
   const onLocationSelected = (selectedLocation) => {
     if (selectedLocation?.label && selectedLocation?.x && selectedLocation?.y) {
