@@ -16,6 +16,10 @@ const Profile = () => {
         return numberOfRides;
     };
 
+    const syle = {
+        width:"100%",
+        height:"100vh",
+    }
     const renderUserInfo = () => {
         return (
             <div className="profile__info">
@@ -40,7 +44,7 @@ const Profile = () => {
   return (
     <>
         <Header />  
-        <div className="profile__container"/>
+        <div className="profile__container" style={style} />
         {renderUserInfo()}
     </>
 
