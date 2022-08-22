@@ -168,7 +168,9 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/" component={Profile} />
+          <Route exact path="/" component={Profile}>
+            <Redirect to="/" />
+          </Route>
           <Route exact path="*">
             <Redirect to="/" />
           </Route>
