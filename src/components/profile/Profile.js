@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 const Profile = () => {
     
-    const { user, rides, cometChat } = useContext(Context);
+    const { user} = useContext(Context);
     //Function to extract the number of user rides from the user object
     const getNumberOfRides = () => {
         let numberOfRides = 0;
@@ -22,6 +22,8 @@ const Profile = () => {
     }
     const renderUserInfo = () => {
         return (
+
+
             <div className="profile__info">
                 <div className="profile__info__image">
                     <img src={user.image} alt={user.email} />
@@ -43,10 +45,13 @@ const Profile = () => {
 
   return (
     <>
-        <Header />  
-        {user}
-        {/* <div className="profile__container" style={style} />
-        {renderUserInfo()} */}
+    <div>
+    <Header />  
+    <div className="profile__container" style={style} />
+        {renderUserInfo()}
+    </div>
+        
+
     </>
 
   );
