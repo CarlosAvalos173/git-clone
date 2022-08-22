@@ -7,7 +7,7 @@ import * as uiService from "../../services/ui";
 import Context from "../../context";
 import { withRouter } from 'react-router-dom';
 
-const Profile = () => {
+const Profile = ({ user }) => {
     
     const { user, setUser, cometChat } = useContext(Context);
     //Function to extract the number of user rides from the user object
@@ -25,7 +25,7 @@ const Profile = () => {
     };
 
     const renderUserInfo = () => {
-        console.log(Context)
+        console.log(user)
         return (
             <div>
             <span>MedHelp</span>
