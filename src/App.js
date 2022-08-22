@@ -56,10 +56,6 @@ function App() {
     setPayment,
   };
 
-  const navigateToProfile = () => {
-    history.push("/profile");
-  }
-
   const initAuthUser = () => {
     const authenticatedUser = localStorage.getItem("auth");
     if (authenticatedUser) {
