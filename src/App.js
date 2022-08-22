@@ -4,8 +4,9 @@ import {
   Switch,
   Route,
   Redirect,
-  useNavigate,
 } from "react-router-dom";
+
+import {useNavigate} from 'react-router-dom';
 
 import Chat from "./components/chat/Chat";
 import Home from "./components/home/Home";
