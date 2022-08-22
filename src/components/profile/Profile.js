@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../common/Header";
 import Context from "../../context";
+import { withRouter } from 'react-router-dom';
 
 const Profile = () => {
     
@@ -19,24 +20,7 @@ const Profile = () => {
   return (
     <>
         <Header />
-        <div className="profile">
-            <div className="profile__left">
-                <div className="profile__left__image">
-                    <img src={user.image} alt={user.email} />
-                </div>
-                <div className="profile__left__info">
-                    <div className="profile__left__info__name">
-                        <span>{user.fullname}</span>
-                    </div>
-                    <div className="profile__left__info__email">
-                        <span>{user.email}</span>
-                    </div>
-                    <div className="profile__left__info__rides">
-                        <span>{getNumberOfRides()}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </>
     //giving a beautiful format as presentation of info and table of rides
 
